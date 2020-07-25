@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>Kalkulator Ghossan</title>
+        <style>
+        
+        .wrapper {
+            width: 500px;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        input, select {
+            border:none;
+            background: white;
+            padding: 20px;
+            text-align: center;
+            outline: none!important;
+        }
+
+        input:disabled {
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: 35px;
+        }
+
+        input:not(:disabled) {
+            border-bottom: 1px solid gray;
+        }
+
+        button {
+            display: inline-block;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 20%;
+            color: white;
+            background: black;
+            cursor: pointer;
+            margin-top: 20px;
+            outline: none!important;
+            box-shadow: 0 15px 40px -6px rgba(0,0,0,.5);
+        }
+        
+        </style>
+    </head>
+    <body>
+        
+        <div class="wrapper">
+            <input type="number" id="input1" placeholder="Angka 1"> <input onclick="checkbox()" type = "checkbox" id="check1" name = "checkbox1"><br>
+            <input type="number" id="input2" placeholder="Angka 2"> <input type = "checkbox" id="check2" name = "checkbox2"><br>
+            <input type="number" id="input3" placeholder="Angka 3"> <input type = "checkbox" id="check3" name = "checkbox3"><br>
+           <br>
+            <button onclick="ftambah()">+</button>
+            <button onclick="fkurang()">-</button>
+            <button onclick="fkali()">x</button>
+            <button onclick="fbagi()">/</button>
+            <br> <br> <br>
+            <div>Hasil : </div>
+            <input type="text" id="hasil" disabled value="0">
+            
+        </div>
+
+        <script>
+        
+        var input1 = document.getElementById("input1");
+        var input2 = document.getElementById("input2");
+        var input3 = document.getElementById("input3");
+        var hasil = document.getElementById("hasil");
+        
+
+        function ftambah(){
+                hasil.value = Number(input1.value) + Number(input2.value) + Number(input3.value);
+            }
+
+        function fkurang(){
+                hasil.value = Number(input1.value) - Number(input2.value) - Number(input3.value);
+            }
+
+        function fkali(){
+                hasil.value = Number(input1.value) * Number(input2.value) * Number(input3.value);
+            }
+
+        function fbagi(){
+                hasil.value = Number(input1.value) / Number(input2.value) / Number(input3.value);
+            }
+        
+
+        </script>
+    </body>
+</html>
